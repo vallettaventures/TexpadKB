@@ -1,4 +1,4 @@
-
+.DS_Store
 
 # standard github latex .gitignore with .pdf added. Any PDFs must be force-added:
 *.pdf
