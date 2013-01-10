@@ -1,0 +1,7 @@
+#!/bin/bash
+
+r -e 'Sweave("'$TEXPAD_ROOTFILE_NO_EXT'.rnw")'
+xelatex $TEXPAD_ROOTFILE_NO_EXT.tex
+bibtex $TEXPAD_ROOTFILE_NO_EXT
+xelatex $TEXPAD_ROOTFILE_NO_EXT.tex
+xelatex $TEXPAD_ROOTFILE_NO_EXT.tex
