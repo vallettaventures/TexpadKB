@@ -1,0 +1,8 @@
+#!/bin/bash
+# Texpad build (.tpbuild) file to convert latex to epub format
+
+pandoc $TEXPAD_ROOTFILE -o $TEXPAD_ROOTFILE.epub
+xelatex $TEXPAD_ROOTFILE
+bibtex $TEXPAD_ROOTFILE_NO_EXT
+xelatex $TEXPAD_ROOTFILE
+xelatex $TEXPAD_ROOTFILE
