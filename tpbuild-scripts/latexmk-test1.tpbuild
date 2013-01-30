@@ -1,0 +1,2 @@
+echo latexmk -pdf $TEXPAD_ROOTFILE
+latexmk -pdf $TEXPAD_ROOTFILE
