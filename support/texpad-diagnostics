@@ -1,0 +1,99 @@
+#!/bin/bash
+# Tex system diagnostic script for 
+# Copyright Valletta Ventures 2013
+
+# To use:
+# - copy to the desktop
+# - execute bash ~/Desktop/texsystemdiagnostic.sh
+# - the results will be placed in the file ~/Desktop/texpad-diagnostics-report.txt
+
+OUTPUTNAME=~/Desktop/texpad-diagnostics-report.txt
+
+# useful functions
+
+whichtest () {
+    echo which $1 >> $OUTPUTNAME
+    which $1 >> $OUTPUTNAME
+    echo >> $OUTPUTNAME
+}
+
+inspectdir () {
+    echo ls -al $1 >> $OUTPUTNAME
+    ls -al $1 >> $OUTPUTNAME
+    echo >> $OUTPUTNAME
+}
+
+header () {
+    echo >> $OUTPUTNAME
+    echo >> $OUTPUTNAME
+    echo -- $1 >> $OUTPUTNAME
+    echo ------------------------------ >> $OUTPUTNAME
+}
+
+echo Writing report to $OUTPUTNAME ...
+
+#
+# Header
+#
+
+echo Tex system diagnostic report > $OUTPUTNAME
+date >> $OUTPUTNAME
+whoami >> $OUTPUTNAME
+hostname >> $OUTPUTNAME
+echo >> $OUTPUTNAME
+
+
+#
+# Path information
+#
+header "Path information"
+
+echo bash path = $PATH >> $OUTPUTNAME
+echo launch control path = `launchctl getenv PATH` >> $OUTPUTNAME
+
+
+#
+# List various directories
+#
+header "Distribution information"
+
+inspectdir /usr/texbin
+inspectdir /usr/texbin/
+inspectdir /usr/local/texlive
+inspectdir /usr/local/texlive/2012
+inspectdir /usr/local/texlive/2011
+inspectdir /usr/local/texlive/2010
+inspectdir /usr/local/texlive/2009
+inspectdir /usr/local/texlive/2008
+inspectdir /usr/local/texlive/2007
+inspectdir /usr/local/texlive/2006
+inspectdir /Library/TeX/Distributions/.DefaultTeX/Contents/Programs/
+
+
+whichtest latex
+whichtest tex
+whichtest perl
+whichtest python
+whichtest xetex
+whichtest xelatex
+whichtest platex
+whichtest bibtex
+whichtest biblatex
+whichtest pdflatex
+whichtest ps2pdf
+whichtest dvips
+whichtest makeindex
+whichtest dvipdf
+whichtest dvipdfm
+whichtest dvipdfmx
+
+
+header "Texpad preferences"
+defaults read com.vallettaventures.Texpad  >> $OUTPUTNAME
+
+
+#
+# Footer
+#
+cat $OUTPUTNAME | pbcopy
+echo ...finished, report has been copied to the clipboard
