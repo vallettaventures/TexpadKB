@@ -72,7 +72,7 @@ inspectdir /usr/local/texlive/2007
 inspectdir /usr/local/texlive/2006
 inspectdir /Library/TeX/Distributions/.DefaultTeX/Contents/Programs/
 inspectdir /usr/local/bin
-inpsectdir /usr/bin
+inspectdir /usr/bin
 inspectdir /opt/local/bin
 inspectdir /opt
 inspectdir /usr/local/Cellar
