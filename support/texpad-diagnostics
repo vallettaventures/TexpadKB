@@ -30,6 +30,8 @@ header () {
     echo ------------------------------ >> $OUTPUTNAME
 }
 
+# Tell the user we are starting
+
 echo Writing report to $OUTPUTNAME ...
 
 #
@@ -38,8 +40,8 @@ echo Writing report to $OUTPUTNAME ...
 
 echo Tex system diagnostic report > $OUTPUTNAME
 date >> $OUTPUTNAME
-whoami >> $OUTPUTNAME
-hostname >> $OUTPUTNAME
+echo user = `whoami` >> $OUTPUTNAME
+echo host = `hostname` >> $OUTPUTNAME
 echo >> $OUTPUTNAME
 
 
@@ -57,6 +59,7 @@ echo launch control path = `launchctl getenv PATH` >> $OUTPUTNAME
 #
 header "Distribution information"
 
+# important directories
 inspectdir /usr/texbin
 inspectdir /usr/texbin/
 inspectdir /usr/local/texlive
@@ -68,8 +71,13 @@ inspectdir /usr/local/texlive/2008
 inspectdir /usr/local/texlive/2007
 inspectdir /usr/local/texlive/2006
 inspectdir /Library/TeX/Distributions/.DefaultTeX/Contents/Programs/
+inspectdir /usr/local/bin
+inpsectdir /usr/bin
+inspectdir /opt/local/bin
+inspectdir /opt
+inspectdir /usr/local/Cellar
 
-
+# important executables
 whichtest latex
 whichtest tex
 whichtest perl
@@ -87,13 +95,16 @@ whichtest dvipdf
 whichtest dvipdfm
 whichtest dvipdfmx
 
-
+#
+# Get Texpad preferences and plist
+#
 header "Texpad preferences"
 defaults read com.vallettaventures.Texpad  >> $OUTPUTNAME
-
+header "Texpad Info.plist"
+cat /Applications/Texpad.app/Contents/Info.plist >> $OUTPUTNAME
 
 #
-# Footer
+# Tell the user we are finished
 #
 cat $OUTPUTNAME | pbcopy
-echo ...finished, report has been copied to the clipboard
+echo ...finished, report has been copied to the clipboard, please email it back to support@vallettaventures.com
