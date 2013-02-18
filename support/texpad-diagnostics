@@ -1,5 +1,5 @@
 #!/bin/bash
-# Tex system diagnostic script for 
+# Texpad system diagnostic script 
 # Copyright Valletta Ventures 2013
 
 # To use:
@@ -38,7 +38,7 @@ echo Writing report to $OUTPUTNAME ...
 # Header
 #
 
-echo Tex system diagnostic report > $OUTPUTNAME
+echo Texpad system diagnostic report > $OUTPUTNAME
 date >> $OUTPUTNAME
 echo user = `whoami` >> $OUTPUTNAME
 echo host = `hostname` >> $OUTPUTNAME
