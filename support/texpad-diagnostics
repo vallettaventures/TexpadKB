@@ -84,6 +84,10 @@ whichtest perl
 whichtest python
 whichtest xetex
 whichtest xelatex
+whichtest xdv2pdf
+whichtest xdvi
+whichtest xdvi-xaw
+whichtest xdvipdfmx
 whichtest platex
 whichtest bibtex
 whichtest biblatex
