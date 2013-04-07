@@ -1,2 +1,5 @@
+#!/bin/bash
+# Texpad build (.tpbuild) file to use latexmk
+
 echo latexmk -pdf $TEXPAD_ROOTFILE
 latexmk -pdf $TEXPAD_ROOTFILE

@@ -1,0 +1,4 @@
+#!/bin/bash
+# Texpad build (.tpbuild) file for ConTeXt
+
+texexec $TEXPAD_ROOTFILE_NO_EXT.tex

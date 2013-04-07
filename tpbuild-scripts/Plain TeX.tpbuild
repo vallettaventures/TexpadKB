@@ -1,0 +1,4 @@
+#!/bin/bash
+# Texpad build (.tpbuild) file for plain tex files
+
+pdftex $TEXPAD_ROOTFILE
