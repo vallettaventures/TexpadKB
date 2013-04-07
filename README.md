@@ -5,6 +5,6 @@ TexpadKB
 
 This repository accompanies articles on the main **Knowledge Base** website:
 
-	http://support.texpadapp.com/kb
+http://support.texpadapp.com/kb
 
 
