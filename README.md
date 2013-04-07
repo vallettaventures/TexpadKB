@@ -1,4 +1,10 @@
 TexpadKB
 ========
 
-Texpad Knowledge Base -- Resources for Texpad Users
+*Texpad Knowledge Base -- Resources for Texpad Users*
+
+This repository accompanies articles on the main **Knowledge Base** website:
+
+	[http://support.texpadapp.com/kb](http://support.texpadapp.com/kb)
+
+
