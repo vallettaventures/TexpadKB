@@ -1,4 +1,4 @@
-TexpadKB -- Texpad Knowledge Base
+### TexpadKB -- Texpad Knowledge Base
 
 Custom .tpbuild scripts. Add these to the BuildScripts directory at
 
