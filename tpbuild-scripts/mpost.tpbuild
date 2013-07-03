@@ -1,0 +1,14 @@
+#!/bin/bash
+# Texpad build (.tpbuild) file for metapost
+# Use for packages such as feynmp and feynmf: http://szczypka.web.cern.ch/szczypka/guides/latex/feynmp.html
+
+pdflatex $TEXPAD_ROOTFILE
+mpost fgraphs
+pdflatex $TEXPAD_ROOTFILE
+pdflatex $TEXPAD_ROOTFILE
+
+# hide the junk:
+mkdir .texpadtmp
+mv $TEXPAD_ROOTFILE_NO_EXT.aux .texpadtmp/
+mv $TEXPAD_ROOTFILE_NO_EXT.log .texpadtmp/
+mv fgraphs.* .texpadtmp/
