@@ -1,0 +1,45 @@
+% An example using indices, glossaries and acronyms
+% Use Cmd-I ro typeset in Texpad
+\documentclass{article}
+
+\usepackage{makeidx}
+\makeindex
+
+\usepackage[acronym]{glossaries}
+\makeglossaries
+
+\newacronym{cd}{CD}{compact disk}
+\newglossaryentry{tree}{name={tree},description={trees are green}}
+
+\begin{document}
+
+\section{Usage}
+
+\noindent
+{\bf Glossaries \& acronyms:}
+\begin{itemize}
+    \item First use: {\it \gls{cd}}.
+    \item Subsequent reference only print the acronym: {\it \gls{cd}}.
+\end{itemize}
+
+\noindent
+{\bf Nomenclatures:}
+\begin{itemize}
+    \item Nomenclatures used {\it \gls{tree}}.
+\end{itemize}
+
+\noindent
+{\bf Indices:}
+\begin{itemize}
+    \item This is a test {\it index entry}\index{index entry}.
+\end{itemize}
+
+\section{Listings}
+
+% print index:
+\printindex
+
+% print glossaries (this includes acronyms)
+\printglossaries
+
+\end{document}
