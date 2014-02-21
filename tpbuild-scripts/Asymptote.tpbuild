@@ -1,0 +1,5 @@
+#!/bin/tcsh
+
+pdflatex -synctex=1 "$TEXPAD_ROOTFILE"
+asy -v "$TEXPAD_ROOTFILE_NO_EXT"-*
+pdflatex -synctex=1 "$TEXPAD_ROOTFILE"
