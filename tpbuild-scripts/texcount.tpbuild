@@ -1,2 +1,2 @@
 #!/bin/bash
-texcount $TEXPAD_ROOTFILE_NO_EXT.tex
+texcount $TEXPAD_ROOTFILE_NO_EXT.tex -merge
