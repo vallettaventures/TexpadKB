@@ -1,0 +1,11 @@
+##	Title	: Texpad script for bibunits
+##	by		: Sunu Wibirama
+##	email	:sunu@jteti.gadjahmada.edu
+#!/bin/bash
+
+pdflatex $TEXPAD_ROOTFILE_NO_EXT.tex
+for file in *.aux ; do
+   bibtex `basename $file .aux`
+done
+pdflatex $TEXPAD_ROOTFILE_NO_EXT.tex
+pdflatex $TEXPAD_ROOTFILE_NO_EXT.tex
