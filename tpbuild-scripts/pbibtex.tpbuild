@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# TPBuild script for typesetting with platex and pbibtex
+
+platex "$TEXPAD_ROOTFILE"
+dvipdfmx -o "$TEXPAD_ROOTFILE_NO_EXT.pdf" "$TEXPAD_ROOTFILE_NO_EXT.dvi"
+pbibtex $TEXPAD_ROOTFILE_NO_EXT
+platex "$TEXPAD_ROOTFILE"
+platex "$TEXPAD_ROOTFILE"
