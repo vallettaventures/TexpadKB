@@ -1,0 +1,30 @@
+% An example using glossaries and acronyms
+\documentclass{article}
+
+\usepackage[acronym]{glossaries}
+\makeglossaries
+
+\newacronym{cd}{CD}{compact disk}
+\newglossaryentry{tree}{name={tree},
+    description={trees are the better humans}}
+
+
+\begin{document}
+
+\noindent
+{\bf Glossaries usage:}
+\begin{itemize}
+    \item First use \gls{cd}
+    \item subsequent \gls{cd}
+\end{itemize}
+
+\noindent
+{\bf Nomenclatures usage:}
+\begin{itemize}
+    \item Nomenclatures used: \gls{tree}
+\end{itemize}
+
+
+\printglossaries
+
+\end{document}
