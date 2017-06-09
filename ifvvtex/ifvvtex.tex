@@ -1,0 +1,22 @@
+\documentclass{article}
+
+\begin{document}
+
+\newif\ifvvtex
+\begingroup\expandafter\expandafter\expandafter\endgroup
+\expandafter\ifx\csname vvtexinspectint\endcsname\relax
+  \vvtexfalse
+\else
+  \vvtextrue
+\fi
+
+This 
+\ifvvtex
+is
+\else
+isn't
+\fi
+VVTex
+
+\end{document}
+
