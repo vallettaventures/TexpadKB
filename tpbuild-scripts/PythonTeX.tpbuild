@@ -1,0 +1,6 @@
+#!/bin/bash
+# Texpad build (.tpbuild) file to use PythonTeX within Texpad
+
+pdflatex "$TEXPAD_ROOTFILE"
+pythontex "$TEXPAD_ROOTFILE_NO_EXT"
+pdflatex "$TEXPAD_ROOTFILE"
