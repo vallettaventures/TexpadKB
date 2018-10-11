@@ -1,6 +1,7 @@
 #!/bin/bash
 # Texpad build (.tpbuild) file to use PythonTeX within Texpad
+# NB this is to demonstrate pythontex only, it would need alterations to support bibliographies, indices, etc.
 
-pdflatex "$TEXPAD_ROOTFILE"
+pdflatex -synctex=1 "$TEXPAD_ROOTFILE"
 pythontex "$TEXPAD_ROOTFILE_NO_EXT"
-pdflatex "$TEXPAD_ROOTFILE"
+pdflatex -synctex=1 "$TEXPAD_ROOTFILE"
