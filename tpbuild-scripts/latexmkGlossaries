@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Latexmk with glossaries and subfolder compatibility.
+
+# Current dir
+currentDir=`pwd`
+
+# Set working dir
+tempDir="$currentDir""/.texpadtmp"
+
+# Exit on failure
+set -e
+
+# Recreate folder structure
+ls -R | grep :$ | sed 's/\.\/\(.*\):$/\1/' | \
+while read thisFolder; do mkdir -p "$tempDir"/"$thisFolder"; done
+
+# Initial run
+echo latexmk -verbose -pdf -latexoption=-interaction=nonstopmode -cd -outdir="$tempDir" "$TEXPAD_ROOTFILE"
+latexmk -verbose -pdf -latexoption=-interaction=nonstopmode -cd -outdir="$tempDir" "$TEXPAD_ROOTFILE"
+
+# Glossary run
+cd "$tempDir"
+fileName=`basename "$TEXPAD_ROOTFILE_NO_EXT"`
+echo makeglossaries "$fileName"
+makeglossaries "$fileName"
+cd ..
+
+# Final run
+echo latexmk -g -verbose -pdf -latexoption=-interaction=nonstopmode -cd -outdir="$tempDir" "$TEXPAD_ROOTFILE"
+latexmk -g -verbose -pdf -latexoption=-interaction=nonstopmode -cd -outdir="$tempDir" "$TEXPAD_ROOTFILE"
+
+mv "$tempDir"/"$fileName".pdf ./"$fileName".pdf
