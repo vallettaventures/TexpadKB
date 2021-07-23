@@ -64,6 +64,16 @@ header "Distribution information"
 inspectdir /usr/texbin
 inspectdir /usr/texbin/
 inspectdir /usr/local/texlive
+inspectdir /usr/local/texlive/2030
+inspectdir /usr/local/texlive/2029
+inspectdir /usr/local/texlive/2028
+inspectdir /usr/local/texlive/2027
+inspectdir /usr/local/texlive/2026
+inspectdir /usr/local/texlive/2025
+inspectdir /usr/local/texlive/2024
+inspectdir /usr/local/texlive/2023
+inspectdir /usr/local/texlive/2022
+inspectdir /usr/local/texlive/2021
 inspectdir /usr/local/texlive/2020
 inspectdir /usr/local/texlive/2019
 inspectdir /usr/local/texlive/2018
@@ -79,6 +89,7 @@ inspectdir /usr/local/texlive/2009
 inspectdir /usr/local/texlive/2008
 inspectdir /usr/local/texlive/2007
 inspectdir /usr/local/texlive/2006
+inspectdir /Library/TeX
 inspectdir /Library/TeX/Distributions/.DefaultTeX/Contents/Programs/
 inspectdir /usr/local/bin
 inspectdir /usr/bin
