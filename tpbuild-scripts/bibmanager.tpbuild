@@ -2,7 +2,9 @@
 
 # Build your Bibliography and compile your Latex files directily from bibmanager
 # https://bibmanager.readthedocs.io/en/latest/
-# run "which bibm" in your terminal to find the absolute path of the bibm binary
 
-BIBM_PATH="/anaconda3/bin/bibm"  # result from "which bibm"
-"$BIBM_PATH" pdflatex "$TEXPAD_ROOTFILE"
+if [ -f ~/.bash_profile ] ; then
+    source ~/.bash_profile
+fi
+
+bibm pdflatex "$TEXPAD_ROOTFILE"
